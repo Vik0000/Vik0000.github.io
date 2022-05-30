@@ -1,0 +1,69 @@
+<form #login = "ngForm" (ngSubmit) = "submit(login)">
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Име</mat-label>
+        <input 
+        matInput 
+        placeholder="" 
+        [formControl]="name" 
+        required>
+        <mat-error *ngIf="name.invalid">{{nameError()}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Фамилия</mat-label>
+        <input 
+        matInput 
+        placeholder="" 
+        [formControl]="surName"
+        required
+
+        >
+        <mat-error *ngIf="surName.invalid">{{surNameError()}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Имейл</mat-label>
+        <input 
+        matInput 
+        placeholder="pat@example.com" 
+        [formControl]="email" 
+        required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label>Хобита</mat-label>
+        <mat-select multiple>
+          <mat-option *ngFor="let hobbie of hobbiesList" [value]="hobbie.code">
+            {{hobbie.label}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div>
+      <label>Пол: </label>
+      <br>
+      <mat-radio-group>
+        <mat-radio-button value="auto">Мъж</mat-radio-button>
+        <br>
+        <mat-radio-button value="always">Жена</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <br>
+    <mat-checkbox 
+    [formControl]="check" 
+    required>
+    <a routerLink="/agree">Съгласен съм с условията за ползване</a>
+    
+  </mat-checkbox>
+  <mat-error *ngIf="check.touched">{{checkError()}}</mat-error>
+    <br><br>
+    <button 
+    mat-stroked-button 
+    color="primary"
+    [disabled]="(name.invalid || surName.invalid || email.invalid || check.invalid) ? 'disabled': null">Submit</button>
+    </form>

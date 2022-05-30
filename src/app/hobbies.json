@@ -1,0 +1,9 @@
+[
+    {"code": "read", "label": "четене"},
+    {"code": "draw", "label": "рисуване"},
+    {"code": "film", "label": "филми"},
+    {"code": "mountain", "label": "планина"},
+    {"code": "cooking", "label": "готвене"},
+    {"code": "games", "label": "игри"},
+    {"code": "climbing", "label": "катерене"}
+  ]
