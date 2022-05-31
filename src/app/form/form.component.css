@@ -2,3 +2,7 @@ form {
     text-align: center;
     padding-top: 100px;
 }
+a{
+    text-decoration: underline;
+    color: rgb(119, 189, 255);
+}
