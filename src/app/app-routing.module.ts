@@ -5,7 +5,7 @@ import { FormComponent } from "./form/form.component";
 
 const appRoutes: Routes = [
   { path: '', component: FormComponent },
-    { path: 'agree', component: AgreeComponent }
+  { path: 'agree', component: AgreeComponent }
   
   ];
 
