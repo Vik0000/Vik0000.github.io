@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import hobbies from '../hobbies.json';
 
 @Component({
@@ -10,11 +10,26 @@ import hobbies from '../hobbies.json';
 })
 export class FormComponent implements OnInit {
   public hobbiesList:any ;
-  email = new FormControl('', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]);
-  name = new FormControl(null,Validators.required);
-  surName = new FormControl(null,Validators.required);
-  check = new FormControl(null,Validators.required);
+  
+  mainForm: any = new FormGroup({
+  email: new FormControl('', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]),
+  name: new FormControl(null,Validators.required),
+  surName: new FormControl(null,Validators.required),
+  check: new FormControl(null,Validators.required)
+});
 
+  get name() {
+    return this.mainForm.get("name");
+  }
+  get surName() {
+    return this.mainForm.get("surName");
+  }
+  get email() {
+    return this.mainForm.get("email");
+  }
+  get check() {
+    return this.mainForm.get("check");
+  }
   constructor(private http: HttpClient) {
 
 

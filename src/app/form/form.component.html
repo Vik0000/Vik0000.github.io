@@ -1,4 +1,4 @@
-<form #login = "ngForm" (ngSubmit) = "submit(login)">
+<form [formGroup] = "mainForm" (ngSubmit) = "submit(mainForm)">
     <div>
       <mat-form-field appearance="outline">
         <mat-label>Име</mat-label>
@@ -18,7 +18,6 @@
         placeholder="" 
         [formControl]="surName"
         required
-
         >
         <mat-error *ngIf="surName.invalid">{{surNameError()}}</mat-error>
       </mat-form-field>
@@ -57,13 +56,13 @@
     <mat-checkbox 
     [formControl]="check" 
     required>
-    <a (click)="open()" >Съгласен съм с условията за ползване</a>
-    
+      
   </mat-checkbox>
+  <a routerLink = "/agree" target="_blank">Съгласен съм с условията за ползване</a> 
   <mat-error *ngIf="check.touched">{{checkError()}}</mat-error>
     <br><br>
     <button 
     mat-stroked-button 
     color="primary"
-    [disabled]="(name.invalid || surName.invalid || email.invalid || check.invalid) ? 'disabled': null">Submit</button>
+    [disabled]="mainForm.invalid ? 'disabled': null">Submit</button>
     </form>
