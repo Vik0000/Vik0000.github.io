@@ -24,7 +24,8 @@ export class FormComponent implements OnInit {
     this.fetchHobbies();
   }
 
-  open() {
+
+   open() {
     window.open('/agree');
   }
 
