@@ -39,11 +39,6 @@ export class FormComponent implements OnInit {
     this.fetchHobbies();
   }
 
-
-   open() {
-    window.open('/agree');
-  }
-
   getErrorMessage() {
     if (this.email.hasError('required')) {
      
