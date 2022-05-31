@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AgreeComponent } from './agree/agree.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormComponent } from './form/form.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -24,7 +25,8 @@ import { FormComponent } from './form/form.component';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
