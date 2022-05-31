@@ -57,7 +57,7 @@
     <mat-checkbox 
     [formControl]="check" 
     required>
-    <a (click)="open()" >Съгласен съм с условията за ползване</a>
+    <a routerLink = "/agree" target="_blank" >Съгласен съм с условията за ползване</a>
     
   </mat-checkbox>
   <mat-error *ngIf="check.touched">{{checkError()}}</mat-error>
